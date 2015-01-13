@@ -26,10 +26,24 @@ def is_palindrome(potential_palindrome):
 		print("It's just one character! True!")
 		return True
 
+def iterative_palindrome(potential_palindrome):
+	front_pointer = 0
+	back_pointer = -1
+	counter = len(potential_palindrome)
+	while counter > 0:
+		if not potential_palindrome[front_pointer] == potential_palindrome[back_pointer]:
+			return False
+		else:
+			front_pointer += 1
+			back_pointer -= 1
+			counter -= 2
+	return True
+
+
 clean_string = punctuation.sub("", user_input)
 clean_string = clean_string.lower()
 
-if is_palindrome(clean_string):
+if iterative_palindrome(clean_string):
 	print("is a palindrome")
 else:
 	print("is not a palindrome")
