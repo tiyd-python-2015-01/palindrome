@@ -1,6 +1,6 @@
 #!/usr/bin/env roundup
 
-describe "palindrome.py: Determines if a text is palindromic"
+describe "palindrome_recursive.py: Determines if a text is palindromic"
 
 prog="python palindrome.py"
 
