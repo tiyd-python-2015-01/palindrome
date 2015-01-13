@@ -4,8 +4,9 @@ import re
 def refine_string(input_string):
     """takes a string as input, removes all
        non-alphabetic characters, and changes all letters to lowercase"""
-    short_string = re.sub(r'[^A-Za-z]',"", input_string).lower()
+    short_string = re.sub(r'[^A-Za-z]', "", input_string).lower()
     return short_string
+
 
 def palindrome_iterative(input_string):
     """iterative function to find if input string is a palindrome"""
@@ -20,6 +21,7 @@ def palindrome_iterative(input_string):
             print("is not a palindrome")
             break
     print("is a palindrome")
+
 
 def palindrome_recursive(input_string):
     """recursive function to find if input string is a palindrome"""
