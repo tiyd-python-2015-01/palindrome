@@ -7,10 +7,12 @@ new_first_word = re.sub(r'[^A-Za-z]', '', first_word).lower()
 def palindrome_recursion(word, start_num = 0, end_num = -1):
     """Pass in a word to determine if it's a palindrome recursively."""
     start_letter = word[start_num]
+    print(start_letter)
     print(start_num)
 
     end_letter = word[end_num]
-    print(abs(end_num))
+    print(end_letter)
+    print(end_num)
 
     if abs(end_num) == len(word):
         print("{} is a palindrome.".format(first_word))
@@ -18,7 +20,11 @@ def palindrome_recursion(word, start_num = 0, end_num = -1):
 
     if start_letter == end_letter:
         start_num += 1
+        print(start_num)
+
         end_num -= 1
+        print(end_num)
+
         palindrome_recursion(word, start_num = start_num,
         end_num = end_num)
 
