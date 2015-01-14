@@ -1,4 +1,6 @@
 def palindrome(user_string):
+    """Determines if user's input is a palindrome."""
+    print("Running my magic palindrometer...")
     if len(user_string) <= 1:
         return True
     elif user_string[0] == user_string[-1]:
@@ -17,10 +19,9 @@ print("Deleting unwanted characters...")
 for iterable in user_string:
     if iterable in "!,;.?":
         user_string = user_string.replace(iterable,'')
-
+print(user_string)
 if palindrome(user_string) == True:
     print ('is a palindrome.')
 else:
     print ('is not a palindrome.')
-
 # Zach and Lee were big a help with recursion
