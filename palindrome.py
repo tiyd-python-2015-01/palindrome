@@ -1,36 +1,24 @@
-'''
-Still needs closure, output, and prints. Needs To Use "is a palindrome" and "is not a palindrome" at closure
+import re
 
-Could use the following for normalize:
+def normalizing(user_string):
+    """Removes all nonalpha characters and converts all letters to lowercase"""
+    search_string = re.compile("[^A-Za-z]")
+    return re.sub(search_string, '', user_string).lower()
 
-def remove(s):
-        sentence = re.sub(r'[^A-Za-z]', '',sentence)
-        return sentence
-'''
 
+def palindrome(s):
+    """Function that determines if the string is a palindrome"""
+    if len(s) <= 1:
+        return True
+    else:
+        boolean = s[0] == s[-1] and palindrome(s[1:-1])
+        return(boolean)
 
 
 sentence = input("Please enter your sentence or sentences: ")
 
-print("Removing characters. Lowering cases...")
 
-def overseer(s):
-
-    def normalizing(s):
-        """converting characters to ascii and alphanumeric letters"""
-        return u"".join(i if isPlainASCIIAlphaNum(i) else '' for i in s)
-        #could use re.sub here
-
-    def lowering_case(s):
-        return s.lower()
-
-    def palindrome(s):
-        if len(s) <= 1:
-            return True
-        else:
-            boolean = s[0] == s[-1] and palindrome(s[1:-1])
-            return(boolean)
-
-    return palindrome(normalize(s))
-
-return sentence
+if palindrome(normalizing(sentence)):
+    print("That is a palindrome")
+else:
+    print("That is not a palindrome")
