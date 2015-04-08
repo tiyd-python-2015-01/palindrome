@@ -1,5 +1,6 @@
 import re
 
+
 def normalizing(user_string):
     """Removes all nonalpha characters and converts all letters to lowercase"""
     search_string = re.compile("[^A-Za-z]")
